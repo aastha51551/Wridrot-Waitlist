@@ -216,7 +216,7 @@ export default function App() {
           </p>
 
           <div className="space-y-2">
-            <h2 className="font-gothic tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-normal leading-[0.9] break-words flex flex-wrap items-center justify-center gap-x-1 drop-shadow-[0_2px_12px_rgba(255,255,255,0.15)]">
+            <h2 className="font-halja tracking-wide text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[8.5rem] text-white font-normal leading-[0.9] break-words flex flex-wrap items-center justify-center gap-x-1 drop-shadow-[0_4px_20px_rgba(255,255,255,0.2)]">
               <span>WRIDROT</span>
             </h2>
             <h2 className="font-wide text-4xl sm:text-6xl md:text-7xl font-black text-blood tracking-tighter leading-none uppercase break-words">

@@ -1,12 +1,40 @@
+@font-face {
+  font-family: 'Halja';
+  src: local('Halja'),
+       local('Halja OT'),
+       local('Halja OT Regular'),
+       local('HaljaOT-Regular'),
+       url('/fonts/HALJA-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Halja Illuminated';
+  src: local('Halja Illuminated'),
+       local('HaljaIlluminated-Regular'),
+       url('/fonts/HALJA-Illuminated.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://api.fontshare.com/v2/css?f=array@400&display=swap');
 @import "tailwindcss";
 
 @theme {
+  --font-halja: "Halja", "Halja OT", "HaljaOT-Regular", "Halja Illuminated", "Cinzel Decorative", Georgia, serif;
   --font-serif-goth: "Array", "Cinzel", Georgia, serif;
   --font-goth-deco: "Array", "Cinzel Decorative", Georgia, serif;
   --font-typewriter: "Special Elite", "Courier New", Courier, monospace;
-  --font-wridrot: "Bodoni Moda", "Playfair Display", "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-wridrot: "Halja", "Halja OT", "Bodoni Moda", "Playfair Display", "Instrument Serif", Georgia, serif;
   --font-magazine: "Syncopate", "Array", sans-serif;
+}
+
+.font-halja {
+  font-family: "Halja", "Halja OT", "HaljaOT-Regular", "Halja Illuminated", "Cinzel Decorative", Georgia, serif !important;
+  font-weight: normal;
 }
 
 .font-wridrot,
@@ -135,5 +163,3 @@ body {
 .animate-sparkle-fast {
   animation: crystal-sparkle 2.5s infinite ease-in-out;
 }
-
-

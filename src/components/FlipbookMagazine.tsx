@@ -259,7 +259,7 @@ export default function FlipbookMagazine() {
     <section id="flipbook-showcase-section" className="w-full max-w-4xl mx-auto my-12 px-2 sm:px-4">
       {/* Section Header */}
       <div className="text-center mb-6 space-y-2">
-        <h2 className="font-gothic text-2xl sm:text-3xl text-white font-normal tracking-wide">
+        <h2 className="font-halja text-3xl sm:text-4xl md:text-5xl text-white font-normal tracking-wide drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
           A SNEAK PEEK 
         </h2>
         <p className="font-serif text-xs text-gray-400 max-w-xl mx-auto leading-relaxed">

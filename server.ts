@@ -3,7 +3,6 @@ import express from "express";
 import path from "path";
 import fs from "fs";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI } from "@google/genai";
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc, getDoc, collection, query, where, getDocs, updateDoc } from "firebase/firestore";
 
@@ -285,11 +284,11 @@ app.post("/api/waitlist", async (req, res) => {
     const { name, email } = req.body;
 
     if (!name || typeof name !== "string" || name.trim().length === 0) {
-      return res.status(400).json({ error: "The Dark Oracle demands your name." });
+      return res.status(400).json({ error: "Fill your a valid name" });
     }
 
     if (!email || typeof email !== "string" || !email.includes("@")) {
-      return res.status(400).json({ error: "Provide a valid realm of contact (email)." });
+      return res.status(400).json({ error: "Provide a valid email." });
     }
 
     const trimmedName = name.trim().slice(0, 50);
@@ -301,7 +300,7 @@ app.post("/api/waitlist", async (req, res) => {
 
     if (emailLookupDoc.exists()) {
       return res.status(400).json({ 
-        error: "This email has already summoned an entry pass. Duplicate covenants are strictly forbidden in the Forbidden Archives." 
+        error: "This email has already been registered" 
       });
     }
 
@@ -537,7 +536,7 @@ async function bootstrap() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Forbidden Archives server manifesting on port ${PORT}`);
+    console.log(`Server manifesting on port ${PORT}`);
   });
 }
 

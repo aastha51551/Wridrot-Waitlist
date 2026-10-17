@@ -61,7 +61,7 @@ export default function GothicForm({ onSuccess }: GothicFormProps) {
     <div id="gothic-form-container" className="w-full max-w-sm rounded-2xl bg-[#090303]/90 border border-red-950/60 p-6 shadow-2xl backdrop-blur-md">
       
       <div className="mb-5 text-center">
-        <h3 className="font-serif text-[#fff] text-xl tracking-wide">
+        <h3 className="font-halja text-white text-3xl sm:text-4xl tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
           JOIN THE WAITLIST 
         </h3>
         <p className="font-mono text-[10px] text-red-500/80 uppercase tracking-widest mt-1">
