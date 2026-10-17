@@ -4,6 +4,7 @@ import { Sparkles, Skull, HelpCircle, Archive, BookOpen, Send, CheckCircle2, Sea
 import GothicForm from "./components/GothicForm";
 import ThreeDToken from "./components/ThreeDToken";
 import FlipbookMagazine from "./components/FlipbookMagazine";
+import background from "./components/images/bg2.png";
 import { WaitlistUser, ShareChannel } from "./types";
 
 export default function App() {
@@ -146,12 +147,18 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030101] flex flex-col items-center relative Selection:bg-red-900 Selection:text-white pb-12 animate-crt select-none">
+    <div className="min-h-screen bg-transparent flex flex-col items-center relative Selection:bg-red-900 Selection:text-white pb-12 animate-crt select-none">
+      <div className="fixed inset-0 z-0 pointer-events-none bg-black">
+        <div className="fixed inset-0 z-0 pointer-events-none bg-black">
+          <img
+            src={background}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ opacity: 0.5 }}
+          />
+        </div>
+      </div>
       
-
-      
-
-
       {/* 1. Dynamic Animated Crystal Ball Background */}
       <div className="absolute top-[200px] sm:top-[250px] left-1/2 -translate-x-1/2 pointer-events-none z-0 opacity-15 overflow-visible select-none flex flex-col items-center justify-center scale-90 sm:scale-110">
         {/* Crystal Globe */}
