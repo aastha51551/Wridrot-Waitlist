@@ -19,7 +19,7 @@ export default function GothicForm({ onSuccess }: GothicFormProps) {
 
     // Initial validations
     if (!name.trim()) {
-      setError("Please enter your name to register");
+      setError("Please enter your name");
       return;
     }
     if (!email.trim() || !email.includes("@")) {
@@ -62,10 +62,10 @@ export default function GothicForm({ onSuccess }: GothicFormProps) {
       
       <div className="mb-5 text-center">
         <h3 className="font-halja text-white text-3xl sm:text-4xl tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
-          JOIN THE WAITLIST 
+          SUBSCRIBE
         </h3>
         <p className="font-mono text-[10px] text-red-500/80 uppercase tracking-widest mt-1">
-          Get your digital token now
+          Sign up to get notified about new issues and events
         </p>
       </div>
 
@@ -146,7 +146,7 @@ export default function GothicForm({ onSuccess }: GothicFormProps) {
       
       <div className="mt-4 text-center">
         <span className="text-[8px] text-gray-600 font-mono tracking-tight">
-          BY SUBMITTING YOU CONSENT TO JOIN OUR OFFICIAL WAITLIST
+          BY SUBMITTING YOU CONSENT TO JOIN THE WRIDROT COMMUNITY
         </span>
       </div>
     </div>
