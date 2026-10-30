@@ -339,13 +339,13 @@ export default function App() {
 
                 <div className="space-y-3.5 text-xs text-gray-300 leading-relaxed leading-5">
                   <p>
-                    Congratulations, <strong className="text-white text-sans font-semibold">{currentUser.name}</strong>. Your email (<em>{currentUser.email}</em>) has been registered with us. Kindly sign up to our Patreon Page (below the token) to be notified before every magazine issue.
+                    Congratulations, <strong className="text-white text-sans font-semibold">{currentUser.name}</strong>. Your email (<em>{currentUser.email}</em>) has been registered with us.
                   </p>
                   <p>
-                    Your digital membership token is ready (scroll down if not on PC). You can hover, drag, and tilt the card in 3D using your mouse or screen coordinate. 
+                    Here's a little something from us: A minizine created with love by Wridrot Team. It's a teaser of our inaugural issue. First issue launching on Friday the 13th!
                   </p>
                   <p className="text-[11px] text-gray-400">
-                    Feel free to download your token to post it on your Instagram, WhatsApp, and socials to flex and invite your friends!
+                    Feel free to download your minizine. If you wish to support us, please find our Patreon page below the minizine.
                   </p>
                 </div>
 
@@ -362,60 +362,13 @@ export default function App() {
                     }}
                     className="flex items-center gap-1 px-3 py-1 bg-red-950/30 text-red-400 border border-red-900/40 hover:bg-neutral-900 text-[10px] font-mono tracking-widest rounded transition-all cursor-pointer"
                   >
-                    REGISTER NEW PASS
+                    SUBSCRIBE AGAIN
                   </button>
                 </div>
               </div>
             )}
 
-            {/* Retrieval scroll box */}
-            <div id="token-retrieval-box" className="p-5 rounded-2xl bg-[#050101]/60 border border-gray-950/80 mt-2 shadow-inner">
-              <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-widest flex items-center gap-2 mb-3">
-                <Archive className="w-3.5 h-3.5 text-gray-600" />
-                RETRIEVE YOUR ID
-              </h4>
-              
-              <div className="flex gap-2">
-                <div className="relative flex-grow">
-                  <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600">
-                    <Search className="w-3.5 h-3.5" />
-                  </span>
-                  <input
-                    id="retrieve-token-input"
-                    type="text"
-                    value={retrievalId}
-                    onChange={(e) => setRetrievalId(e.target.value)}
-                    placeholder="ENTER ID (e.g. WM11111)"
-                    className="w-full pl-9 pr-3 py-1.5 bg-black text-xs text-gray-300 font-mono border border-gray-900 rounded-lg placeholder-gray-800 focus:outline-none focus:border-red-950/80 transition-all uppercase"
-                  />
-                </div>
-                
-                <button
-                  id="retrieve-scroll-btn"
-                  onClick={() => retrieveUserToken(retrievalId)}
-                  className="px-4 py-1.5 bg-neutral-950/40 text-gray-300 border border-neutral-900 hover:border-red-950 hover:text-red-400 text-[10px] font-mono rounded-lg transition-all cursor-pointer flex items-center gap-1"
-                >
-                  LOAD
-                  <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-
-              {retrievalError && (
-                <p id="retrieve-error-notice" className="text-[10px] text-red-500 font-mono mt-2 pl-1 animate-pulse flex items-center gap-1">
-                  ⚠ {retrievalError}
-                </p>
-              )}
-              {retrievalSuccess && (
-                <p id="retrieve-success-notice" className="text-[10px] text-emerald-500 font-mono mt-2 pl-1 flex items-center gap-1 bg-emerald-950/10 py-1 px-2 border border-emerald-950/20 rounded">
-                  <BookOpenCheck className="w-3.5 h-3.5" />
-                  Entry found
-                </p>
-              )}
-            </div>
-
-          </section>
-
-          {/* RIGHT PANEL: Dynamic 3D Token Oracle Display (7 columns) */}
+          /* {/* RIGHT PANEL: Dynamic 3D Token Oracle Display (7 columns) */}
           <section className="lg:col-span-7 flex flex-col items-center justify-center bg-[#070303]/40 border border-red-950/10 p-4 md:p-8 rounded-3xl backdrop-blur-sm self-stretch shrink-0">
             
             {/* Real 3D interactive Token Viewer Canvas */}
@@ -423,7 +376,7 @@ export default function App() {
               user={currentUser} 
               onShareRecorded={handleShareRecorded} 
             />
-          </section>
+          </section> */
 
         </main>
 
