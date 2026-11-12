@@ -1,3 +1,9 @@
+
+@import url('https://api.fontshare.com/v2/css?f=array@400&display=swap');
+@import "tailwindcss";
+
+/* FONTS */
+
 @font-face {
   font-family: 'Halja';
   src: local('Halja'),
@@ -20,9 +26,6 @@
   font-display: swap;
 }
 
-@import url('https://api.fontshare.com/v2/css?f=array@400&display=swap');
-@import "tailwindcss";
-
 @theme {
   --font-halja: "Halja", "Halja OT", "HaljaOT-Regular", "Halja Illuminated", "Cinzel Decorative", Georgia, serif;
   --font-serif-goth: "Array", "Cinzel", Georgia, serif;
@@ -30,6 +33,19 @@
   --font-typewriter: "Special Elite", "Courier New", Courier, monospace;
   --font-wridrot: "Halja", "Halja OT", "Bodoni Moda", "Playfair Display", "Instrument Serif", Georgia, serif;
   --font-magazine: "Syncopate", "Array", sans-serif;
+
+  /* Emerald gothic colours */
+  --color-horror-crimson: #10b981;
+  --color-blood: #10b981;
+}
+
+:root {
+  --emerald-darkest: #020805;
+  --emerald-deep: #064e3b;
+  --emerald-dark: #047857;
+  --emerald-primary: #10b981;
+  --emerald-bright: #34d399;
+  --emerald-light: #6ee7b7;
 }
 
 .font-halja {
@@ -50,8 +66,9 @@
   font-family: "Syncopate", "Array", sans-serif !important;
 }
 
+/* Existing class preserved for compatibility */
 .text-blood {
-  color: #dc2626 !important;
+  color: #10b981 !important;
 }
 
 @layer utilities {
@@ -60,7 +77,8 @@
   }
 }
 
-/* Atmospheric Custom Animations */
+/* ATMOSPHERIC ANIMATIONS */
+
 @keyframes crt-flicker {
   0% { opacity: 0.985; }
   50% { opacity: 1; }
@@ -69,10 +87,14 @@
 
 @keyframes title-glow {
   0%, 100% {
-    text-shadow: 0 0 4px rgba(220, 38, 38, 0.4), 0 0 10px rgba(185, 28, 28, 0.2);
+    text-shadow:
+      0 0 4px rgba(16, 185, 129, 0.4),
+      0 0 10px rgba(5, 150, 105, 0.2);
   }
   50% {
-    text-shadow: 0 0 12px rgba(220, 38, 38, 0.85), 0 0 24px rgba(185, 28, 28, 0.5);
+    text-shadow:
+      0 0 12px rgba(16, 185, 129, 0.85),
+      0 0 24px rgba(5, 150, 105, 0.5);
   }
 }
 
@@ -81,7 +103,6 @@
   50% { opacity: 0.95; }
 }
 
-/* Apply animations */
 .animate-crt {
   animation: crt-flicker 0.15s infinite;
 }
@@ -94,54 +115,89 @@
   animation: vignette-pulse 10s infinite ease-in-out;
 }
 
-/* Custom Goth/Horror Scrollbars */
+/* EMERALD GOTHIC SCROLLBARS */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #050101;
-}
-::-webkit-scrollbar-thumb {
-  background: #270606;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #5c0f0f;
+  background: #020805;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #064e3b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* GLOBAL BACKGROUND */
+
 body {
-  background-color: #030101;
+  background-color: #020805;
   color: #d1d5db;
   overflow-x: hidden;
 }
 
-/* Crystal Ball Keyframe Animations */
+/* CRYSTAL BALL ANIMATIONS */
+
 @keyframes ball-pulse {
   0%, 100% {
-    box-shadow: 0 0 40px rgba(185, 28, 28, 0.15), inset 0 0 30px rgba(185, 28, 28, 0.2);
+    box-shadow:
+      0 0 40px rgba(16, 185, 129, 0.15),
+      inset 0 0 30px rgba(16, 185, 129, 0.2);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 65px rgba(185, 28, 28, 0.25), inset 0 0 50px rgba(185, 28, 28, 0.35);
+    box-shadow:
+      0 0 65px rgba(16, 185, 129, 0.25),
+      inset 0 0 50px rgba(16, 185, 129, 0.35);
     transform: scale(1.02);
   }
 }
 
 @keyframes float-mist-1 {
-  0% { transform: translate(-10%, 10%) rotate(0deg) scale(1); opacity: 0.15; }
-  50% { transform: translate(10%, -10%) rotate(180deg) scale(1.1); opacity: 0.35; }
-  100% { transform: translate(-10%, 10%) rotate(360deg) scale(1); opacity: 0.15; }
+  0% {
+    transform: translate(-10%, 10%) rotate(0deg) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(10%, -10%) rotate(180deg) scale(1.1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(-10%, 10%) rotate(360deg) scale(1);
+    opacity: 0.15;
+  }
 }
 
 @keyframes float-mist-2 {
-  0% { transform: translate(15%, -5%) rotate(360deg) scale(1.1); opacity: 0.1; }
-  50% { transform: translate(-15%, 15%) rotate(180deg) scale(0.9); opacity: 0.25; }
-  100% { transform: translate(15%, -5%) rotate(0deg) scale(1.1); opacity: 0.1; }
+  0% {
+    transform: translate(15%, -5%) rotate(360deg) scale(1.1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(-15%, 15%) rotate(180deg) scale(0.9);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(15%, -5%) rotate(0deg) scale(1.1);
+    opacity: 0.1;
+  }
 }
 
 @keyframes crystal-sparkle {
-  0%, 100% { opacity: 0.1; transform: translateY(0px) scale(0.8); }
-  50% { opacity: 0.7; transform: translateY(-15px) scale(1.2); }
+  0%, 100% {
+    opacity: 0.1;
+    transform: translateY(0px) scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-15px) scale(1.2);
+  }
 }
 
 .animate-ball {

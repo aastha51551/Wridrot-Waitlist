@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 import { Sparkles, Skull, HelpCircle, Archive, BookOpen, Send, CheckCircle2, Search, ArrowRight, BookOpenCheck } from "lucide-react";
 import GothicForm from "./components/GothicForm";
-import ThreeDToken from "./components/ThreeDToken";
+import SubmissionsSection from "./components/SubmissionsSection";
 import FlipbookMagazine from "./components/FlipbookMagazine";
-import background from "./components/images/bg2.png";
+import background from "./components/images/bg.png";
+import cover from "./components/images/WridrotCover.png";
 import { WaitlistUser, ShareChannel } from "./types";
 
 export default function App() {
@@ -218,7 +219,7 @@ export default function App() {
         
         {/* Header Branding */}
         <header className="text-center mb-10 md:mb-16">
-          <p className="text-[10px] md:text-sm font-mono tracking-[0.25em] text-red-500 uppercase font-semibold mb-3">
+          <p className="text-[10px] md:text-sm font-mono tracking-[0.25em] text-emerald-600 uppercase font-semibold mb-3">
             YOUR NIGHTMARE FUEL
           </p>
 
@@ -306,86 +307,132 @@ export default function App() {
           </section>
         )}
 
-        {/* MAIN BODY GRID */}
-        <main className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start xl:px-8">
-          
-          {/* LEFT PANEL: Form / Access portal panel (5 columns) */}
-          <section className="lg:col-span-5 space-y-8 flex flex-col justify-center">
-            {!currentUser ? (
-              <>
+{/* MAIN BODY LAYOUT */}
+<main className="w-full flex flex-col gap-12 md:gap-16 xl:px-8">
 
-                {/* Gothic Register Form Component */}
-                <GothicForm onSuccess={handleRegisterSuccess} />
-              </>
-            ) : (
-              <div id="waitlist-registered-welcome" className="p-6 rounded-2xl bg-[#090303]/90 border border-emerald-950/60 shadow-2xl space-y-5 animate-fade-in relative overflow-hidden">
-                
-                {/* Visual success background glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-950/15 rounded-full pointer-events-none filter blur-2xl" />
+  {/* 1. SUBMISSIONS SECTION
+  <section className="w-full">
+    <div className="border-b border-zinc-900 pb-4 mb-8">
+      
 
-                <div className="flex items-center gap-3">
-                  <div className="rounded-full bg-emerald-950/60 p-2 border border-emerald-900/40">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-gothic text-white font-bold tracking-wider text-base">
-                      REGISTERED SUCCESSFULLY
-                    </h3>
-                    <p className="font-mono text-[9px] text-emerald-400 uppercase tracking-widest">
-                      At Rank #{currentUser.displayNumber}
-                    </p>
-                  </div>
-                </div>
+      <h2 className="font-halja text-3xl sm:text-4xl md:text-5xl text-white font-normal tracking-wide drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">
+        Submission Box
+      </h2>
+    </div>
 
-                <div className="space-y-3.5 text-xs text-gray-300 leading-relaxed leading-5">
-                  <p>
-                    Congratulations, <strong className="text-white text-sans font-semibold">{currentUser.name}</strong>. Your email (<em>{currentUser.email}</em>) has been registered with us.
-                  </p>
-                  <p>
-                    Here's a little something from us: A minizine created with love by Wridrot Team. It's a teaser of our inaugural issue. First issue launching on Friday the 13th!
-                  </p>
-                  <p className="text-[11px] text-gray-400">
-                    Feel free to download your minizine. If you wish to support us, please find our Patreon page below the minizine.
-                  </p>
-                </div>
+    <div className="w-full">
+      <SubmissionsSection />
+    </div>
+  </section> */}
 
-                <div className="pt-2 border-t border-gray-900 flex justify-between items-center">
-                  <span className="font-mono text-[9px] text-gray-600">
-                    WRIDROT MAGAZINE
-                  </span>
-                  
-                  <button
-                    id="register-another-btn"
-                    onClick={() => {
-                      setCurrentUser(null);
-                      setRetrievalSuccess(false);
-                    }}
-                    className="flex items-center gap-1 px-3 py-1 bg-red-950/30 text-red-400 border border-red-900/40 hover:bg-neutral-900 text-[10px] font-mono tracking-widest rounded transition-all cursor-pointer"
-                  >
-                    SUBSCRIBE AGAIN
-                  </button>
-                </div>
-              </div>
-            )}
+  
+{/* SUBSCRIBE + ZINE COVER SECTION */}
+<section className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center mt-12 xl:px-8">
 
-          /* {/* RIGHT PANEL: Dynamic 3D Token Oracle Display (7 columns) */}
-          <section className="lg:col-span-7 flex flex-col items-center justify-center bg-[#070303]/40 border border-red-950/10 p-4 md:p-8 rounded-3xl backdrop-blur-sm self-stretch shrink-0">
-            
-            {/* Real 3D interactive Token Viewer Canvas */}
-            <ThreeDToken 
-              user={currentUser} 
-              onShareRecorded={handleShareRecorded} 
-            />
-          </section> */
+  {/* LEFT: SUBSCRIBE FORM */}
+  <div className="w-full flex justify-center md:justify-start">
+    {!currentUser ? (
+      <div className="w-full max-w-xl">
+        <GothicForm onSuccess={handleRegisterSuccess} />
+      </div>
+    ) : (
+      <div
+        id="waitlist-registered-welcome"
+        className="w-full max-w-xl p-6 rounded-2xl bg-[#090303]/90 border border-emerald-950/60 shadow-2xl space-y-5 animate-fade-in relative overflow-hidden"
+      >
+        {/* Success background glow */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-950/15 rounded-full pointer-events-none filter blur-2xl" />
 
-        </main>
+        <div className="flex items-center gap-3">
+          <div className="rounded-full bg-emerald-950/60 p-2 border border-emerald-900/40">
+            <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+          </div>
+
+          <div>
+            <h3 className="font-gothic text-white font-bold tracking-wider text-base">
+              REGISTERED SUCCESSFULLY
+            </h3>
+            <p className="font-mono text-[9px] text-emerald-400 uppercase tracking-widest">
+              At Rank #{currentUser.displayNumber}
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-3.5 text-xs text-gray-300 leading-relaxed">
+          <p>
+            Congratulations,{" "}
+            <strong className="text-white">{currentUser.name}</strong>.
+            Your email (<em>{currentUser.email}</em>) has been registered with us.
+          </p>
+
+          <p>
+            If you wish to get our inaugural issue, please click on the cover of the magazine to get redurected to our shop. You can also checkout the minizine for this issue above.
+          </p>
+
+          <p className="text-[11px] text-gray-400">
+            Do follow us on our socials - @wridrot.magazine
+          </p>
+        </div>
+
+        <div className="pt-2 border-t border-gray-900 flex justify-between items-center">
+          <span className="font-mono text-[9px] text-gray-600">
+            WRIDROT MAGAZINE
+          </span>
+
+          <button
+            id="register-another-btn"
+            onClick={() => {
+              setCurrentUser(null);
+              setRetrievalSuccess(false);
+            }}
+            className="flex items-center gap-1 px-3 py-1 bg-red-950/30 text-red-400 border border-red-900/40 hover:bg-neutral-900 text-[10px] font-mono tracking-widest rounded transition-all cursor-pointer"
+          >
+            SUBSCRIBE AGAIN
+          </button>
+        </div>
+      </div>
+    )}
+  </div>
+
+  
+{/* RIGHT: ZINE COVER - CLICKABLE PATREON LINK */}
+<div className="w-full flex justify-center items-center">
+  <a
+    href="YOUR_PATREON_LINK"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block group w-full max-w-sm text-center transition-transform duration-500 hover:scale-[1.03]"
+  >
+    <img
+      src = {cover}
+      alt="Wridrot Magazine Inaugural Issue"
+      className="w-full h-auto object-contain rounded-lg border border-red-950/50 shadow-[0_0_30px_rgba(127,29,29,0.2)] group-hover:shadow-[0_0_45px_rgba(220,38,38,0.3)] transition-all duration-500"
+    />
+
+    <p className="text-center mt-5 font-mono text-xs tracking-[0.2em] text-emerald-600 group-hover:text-red-300 transition-colors">
+      BUY THE INAUGURAL ISSUE 
+    </p>
+
+    <p className="text-center mt-2 font-serif text-xs text-gray-500">
+      Click on the cover to visit shop
+    </p>
+  </a>
+</div>
+
+
+</section>
+
+
+
+</main>
+
 
         {/* 3. FOOTER (Branding styled exactly after Image 2) */}
         <footer className="w-full border-t border-red-950/20 mt-16 pt-8 pb-4 text-center">
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-5">
             <a 
               href="mailto:wridrotmagazine@gmail.com"
-              className="px-5 py-2 hover:bg-red-950/25 border border-red-950/40 hover:border-red-800 text-gray-400 hover:text-red-400 text-[9px] md:text-xs font-mono tracking-widest uppercase rounded font-medium transition-all cursor-pointer inline-block"
+              className="px-5 py-2 hover:bg-emerald-950/25 border border-emerald-950/40 hover:border-emerald-800 text-gray-400 hover:text-emerald-400 text-[9px] md:text-xs font-mono tracking-widest uppercase rounded font-medium transition-all cursor-pointer inline-block"
             >
               CONTACT US
             </a>
