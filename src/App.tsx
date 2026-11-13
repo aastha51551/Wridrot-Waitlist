@@ -148,7 +148,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent flex flex-col items-center relative Selection:bg-red-900 Selection:text-white pb-12 animate-crt select-none">
+    <div className="min-h-screen bg-transparent flex flex-col items-center relative Selection:bg-emerald-600 Selection:text-white pb-12 animate-crt select-none">
       <div className="fixed inset-0 z-0 pointer-events-none bg-black">
         <div className="fixed inset-0 z-0 pointer-events-none bg-black">
           <img
@@ -163,31 +163,31 @@ export default function App() {
       {/* 1. Dynamic Animated Crystal Ball Background */}
       <div className="absolute top-[200px] sm:top-[250px] left-1/2 -translate-x-1/2 pointer-events-none z-0 opacity-15 overflow-visible select-none flex flex-col items-center justify-center scale-90 sm:scale-110">
         {/* Crystal Globe */}
-        <div className="relative w-[340px] h-[340px] rounded-full border border-red-950/40 bg-zinc-950/20 backdrop-blur-[1px] animate-ball flex items-center justify-center overflow-hidden">
+        <div className="relative w-[340px] h-[340px] rounded-full border border-emerald-950/40 bg-zinc-950/20 backdrop-blur-[1px] animate-ball flex items-center justify-center overflow-hidden">
           
           {/* Inner Swirling Cloud Layers */}
           <div className="absolute w-[260px] h-[260px] rounded-full bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.5)_0%,rgba(9,3,3,0.1)_70%,transparent_100%)] blur-xl animate-mist-1" />
           <div className="absolute w-[220px] h-[220px] rounded-full bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.4)_0%,rgba(9,3,3,0.1)_70%,transparent_100%)] blur-lg animate-mist-2" />
           
           {/* Sparkles / Magic nodes */}
-          <div className="absolute top-1/4 left-1/3 w-1.5 h-1.5 rounded-full bg-red-400 blur-[0.5px] animate-sparkle-slow" />
-          <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-red-500 blur-[0.5px] animate-sparkle-fast" />
-          <div className="absolute bottom-1/3 left-1/4 w-1 h-1 rounded-full bg-red-300 blur-[0.5px] animate-sparkle-slow" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-1/4 left-1/3 w-1.5 h-1.5 rounded-full bg-emerald-400 blur-[0.5px] animate-sparkle-slow" />
+          <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-emerald-500 blur-[0.5px] animate-sparkle-fast" />
+          <div className="absolute bottom-1/3 left-1/4 w-1 h-1 rounded-full bg-emerald-300 blur-[0.5px] animate-sparkle-slow" style={{ animationDelay: '1.5s' }} />
           <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 rounded-full bg-purple-400 blur-[0.5px] animate-sparkle-fast" style={{ animationDelay: '0.8s' }} />
 
           {/* Reflections and highlights (Adds 3D glass effect) */}
           {/* Top highlight curved shine */}
           <div className="absolute top-2 left-6 right-6 h-16 bg-gradient-to-b from-white/10 to-transparent rounded-[50%_50%_10%_10%] opacity-40 blur-[1px]" />
           {/* Bottom internal glow */}
-          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-red-900/20 via-red-950/10 to-transparent rounded-b-full opacity-60" />
+          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-emerald-900/20 via-emerald-950/10 to-transparent rounded-b-full opacity-60" />
           
           {/* Edge Rim Light */}
-          <div className="absolute inset-0 rounded-full border-[1.5px] border-t-white/15 border-b-red-900/40 border-l-white/5 border-r-white/5" />
+          <div className="absolute inset-0 rounded-full border-[1.5px] border-t-white/15 border-b-emerald-900/40 border-l-white/5 border-r-white/5" />
         </div>
 
         {/* Elegant Pedestal/Stand (SVG for high precision gothic design) */}
         <div className="relative -mt-4 w-[200px] h-[60px] flex justify-center">
-          <svg width="100%" height="100%" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-red-950/40">
+          <svg width="100%" height="100%" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-emerald-950/40">
             {/* Upper Grip Ring */}
             <path d="M 60 4 Q 100 12, 140 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
             <path d="M 50 8 Q 100 18, 150 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6"/>
@@ -212,7 +212,7 @@ export default function App() {
       </div>
 
       {/* 2. Vintage CRT overlay glow effects */}
-      <div className="absolute inset-x-0 top-0 h-[600px] bg-gradient-to-b from-red-950/15 via-black/0 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-[600px] bg-gradient-to-b from-emerald-950/15 via-black/0 to-transparent pointer-events-none" />
 
       {/* Global Page Layout Container */}
       <div className="container max-w-6xl mx-auto px-4 pt-10 md:pt-16 relative z-10 flex-grow">
@@ -243,29 +243,29 @@ export default function App() {
         <FlipbookMagazine />
 
         {dbSetupError && (
-          <section id="firebase-setup-helper-card" className="w-full max-w-2xl mx-auto mb-12 p-6 rounded-2xl bg-[#0b0303] border-2 border-dashed border-red-900/80 shadow-[0_0_30px_rgba(239,68,68,0.15)] animate-fade-in relative overflow-hidden text-left relative z-20">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-red-950/10 rounded-full filter blur-2xl pointer-events-none" />
+          <section id="firebase-setup-helper-card" className="w-full max-w-2xl mx-auto mb-12 p-6 rounded-2xl bg-[#0b0303] border-2 border-dashed border-emerald-900/80 shadow-[0_0_30px_rgba(239,68,68,0.15)] animate-fade-in relative overflow-hidden text-left relative z-20">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-950/10 rounded-full filter blur-2xl pointer-events-none" />
             <div className="flex items-start gap-4">
-              <div className="p-2 bg-red-950/40 rounded-full border border-red-900/50 mt-1 flex-shrink-0 animate-pulse">
-                <Skull className="w-5 h-5 text-red-500" />
+              <div className="p-2 bg-emerald-950/40 rounded-full border border-emerald-900/50 mt-1 flex-shrink-0 animate-pulse">
+                <Skull className="w-5 h-5 text-emerald-500" />
               </div>
               <div className="space-y-4 flex-grow">
                 <div>
-                  <h3 className="font-serif-goth text-lg text-red-400 font-bold tracking-wide">
-                    COVEN VAULT DEPLOYMENT REQUIRED
+                  <h3 className="font-serif-goth text-lg text-emerald-400 font-bold tracking-wide">
+                    COVEN VAULT DEPLOYMENT REQUIemerald
                   </h3>
                   <p className="font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">
                     Cloud Firestore is pending activation
                   </p>
                 </div>
 
-                <div className="text-xs text-gray-400 leading-relaxed border-l-2 border-red-900/40 pl-4 space-y-3.5">
+                <div className="text-xs text-gray-400 leading-relaxed border-l-2 border-emerald-900/40 pl-4 space-y-3.5">
                   <p>
-                    Greetings, architect. The Wridrot Magazine portal is fully compiled, but the cloud database has not yet been enabled in your active Firebase project <strong className="text-red-400">"{dbSetupError.projectId}"</strong>.
+                    Greetings, architect. The Wridrot Magazine portal is fully compiled, but the cloud database has not yet been enabled in your active Firebase project <strong className="text-emerald-400">"{dbSetupError.projectId}"</strong>.
                   </p>
                   
-                  <div className="space-y-2.5 mt-2 bg-black/40 p-3.5 rounded-xl border border-red-950/40 font-mono text-[11px] text-gray-300">
-                    <div className="font-sans font-bold text-red-500/90 text-xs mb-1.5 uppercase flex items-center gap-1.5 border-b border-red-950/45 pb-1">
+                  <div className="space-y-2.5 mt-2 bg-black/40 p-3.5 rounded-xl border border-emerald-950/40 font-mono text-[11px] text-gray-300">
+                    <div className="font-sans font-bold text-emerald-500/90 text-xs mb-1.5 uppercase flex items-center gap-1.5 border-b border-emerald-950/45 pb-1">
                       <span>📜 RITUAL SETUP STEPS</span>
                     </div>
                     <ol className="list-decimal list-inside space-y-2">
@@ -275,7 +275,7 @@ export default function App() {
                           href={`https://console.firebase.google.com/project/${dbSetupError.projectId}/firestore`} 
                           target="_blank" 
                           rel="noreferrer" 
-                          className="text-red-400 underline hover:text-red-300 font-semibold inline-block"
+                          className="text-emerald-400 underline hover:text-emerald-300 font-semibold inline-block"
                         >
                           Click here to open project "{dbSetupError.projectId}" direct to Firestore
                         </a>
@@ -284,13 +284,13 @@ export default function App() {
                         <strong>Navigate to Firestore:</strong> If navigating manually, in the left sidebar click on <strong className="text-white">Build</strong> and select <strong className="text-white font-semibold">Firestore Database</strong>.
                       </li>
                       <li>
-                        <strong>Create Database:</strong> Click the orange <strong className="text-red-500 font-semibold">"Create database"</strong> button.
+                        <strong>Create Database:</strong> Click the orange <strong className="text-emerald-500 font-semibold">"Create database"</strong> button.
                       </li>
                       <li>
                         <strong>Choose Edition:</strong> Select <strong className="text-white">Enterprise Edition</strong> or keep defaults. Both utilize the generous free Spark quota.
                       </li>
                       <li>
-                        <strong>Database Location:</strong> Select your preferred region (such as <strong className="text-white">us-central</strong>, <strong className="text-white font-semibold">eur3</strong>, or closest).
+                        <strong>Database Location:</strong> Select your preferemerald region (such as <strong className="text-white">us-central</strong>, <strong className="text-white font-semibold">eur3</strong>, or closest).
                       </li>
                       <li>
                         <strong>Rules Configuration:</strong> Choose <strong className="text-white">"Start in test mode"</strong> or <strong className="text-white font-semibold">"Start in production mode"</strong>. Your secure coven security rules from `firestore.rules` are already deployed on our end!
@@ -337,7 +337,7 @@ export default function App() {
       </div>
     ) : (
       <div
-        id="waitlist-registered-welcome"
+        id="waitlist-registeemerald-welcome"
         className="w-full max-w-xl p-6 rounded-2xl bg-[#090303]/90 border border-emerald-950/60 shadow-2xl space-y-5 animate-fade-in relative overflow-hidden"
       >
         {/* Success background glow */}
@@ -350,7 +350,7 @@ export default function App() {
 
           <div>
             <h3 className="font-gothic text-white font-bold tracking-wider text-base">
-              REGISTERED SUCCESSFULLY
+              REGISTEemerald SUCCESSFULLY
             </h3>
             <p className="font-mono text-[9px] text-emerald-400 uppercase tracking-widest">
               At Rank #{currentUser.displayNumber}
@@ -362,11 +362,11 @@ export default function App() {
           <p>
             Congratulations,{" "}
             <strong className="text-white">{currentUser.name}</strong>.
-            Your email (<em>{currentUser.email}</em>) has been registered with us.
+            Your email (<em>{currentUser.email}</em>) has been registeemerald with us.
           </p>
 
           <p>
-            If you wish to get our inaugural issue, please click on the cover of the magazine to get redurected to our shop. You can also checkout the minizine for this issue above.
+            If you wish to get our inaugural issue, please click on the cover of the magazine to get emeraldurected to our shop. You can also checkout the minizine for this issue above.
           </p>
 
           <p className="text-[11px] text-gray-400">
@@ -385,7 +385,7 @@ export default function App() {
               setCurrentUser(null);
               setRetrievalSuccess(false);
             }}
-            className="flex items-center gap-1 px-3 py-1 bg-red-950/30 text-red-400 border border-red-900/40 hover:bg-neutral-900 text-[10px] font-mono tracking-widest rounded transition-all cursor-pointer"
+            className="flex items-center gap-1 px-3 py-1 bg-emerald-950/30 text-emerald-400 border border-emerald-900/40 hover:bg-neutral-900 text-[10px] font-mono tracking-widest rounded transition-all cursor-pointer"
           >
             SUBSCRIBE AGAIN
           </button>
@@ -406,10 +406,10 @@ export default function App() {
     <img
       src = {cover}
       alt="Wridrot Magazine Inaugural Issue"
-      className="w-full h-auto object-contain rounded-lg border border-red-950/50 shadow-[0_0_30px_rgba(127,29,29,0.2)] group-hover:shadow-[0_0_45px_rgba(220,38,38,0.3)] transition-all duration-500"
+      className="w-full h-auto object-contain rounded-lg border border-emerald-950/50 shadow-[0_0_30px_rgba(127,29,29,0.2)] group-hover:shadow-[0_0_45px_rgba(220,38,38,0.3)] transition-all duration-500"
     />
 
-    <p className="text-center mt-5 font-mono text-xs tracking-[0.2em] text-emerald-600 group-hover:text-red-300 transition-colors">
+    <p className="text-center mt-5 font-mono text-xs tracking-[0.2em] text-emerald-600 group-hover:text-emerald-300 transition-colors">
       BUY THE INAUGURAL ISSUE 
     </p>
 
@@ -428,7 +428,7 @@ export default function App() {
 
 
         {/* 3. FOOTER (Branding styled exactly after Image 2) */}
-        <footer className="w-full border-t border-red-950/20 mt-16 pt-8 pb-4 text-center">
+        <footer className="w-full border-t border-emerald-950/20 mt-16 pt-8 pb-4 text-center">
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-5">
             <a 
               href="mailto:wridrotmagazine@gmail.com"

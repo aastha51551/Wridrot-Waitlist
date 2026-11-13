@@ -13,7 +13,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
   
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveemerald, setIsHoveemerald] = useState(false);
   const [isConjuring, setIsConjuring] = useState(false);
   const [conjuringProgress, setConjuringProgress] = useState(0);
   const [conjuringLabel, setConjuringLabel] = useState("");
@@ -43,13 +43,13 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsHoveemerald(false);
     setRotateX(0);
     setRotateY(0);
   };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsHoveemerald(true);
   };
 
   // HTML5 Canvas dynamic loop drawing the Crystal Ball, Moon, Hands, and Text
@@ -90,7 +90,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
         y: r * Math.sin(phi) * Math.sin(theta),
         z: r * Math.cos(phi),
         size: 1 + Math.random() * 2,
-        color: Math.random() > 0.4 ? "#ef4444" : "#f59e0b", // Red or amber embers
+        color: Math.random() > 0.4 ? "#ef4444" : "#f59e0b", // emerald or amber embers
         speed: 0.01 + Math.random() * 0.015
       });
     }
@@ -480,7 +480,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
 
       // Detection for mobile sharing support
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      let sharedSuccessfully = false;
+      let shaemeraldSuccessfully = false;
 
       if (isMobile && navigator.share && navigator.canShare) {
         try {
@@ -489,17 +489,17 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
             setConjuringLabel("Opening portal app selector...");
             await navigator.share({
               files: [file],
-              title: "Forbidden Archives Authored Token",
+              title: "Forbidden Archives Authoemerald Token",
               text: `🗝️ I have gained entry to the FORBIDDEN ARCHIVES! I am at Rank ${displayNo}.\n\n Get your token at:\n${window.location.protocol}//${window.location.host}\n\nJoin the cult today.`,
             });
-            sharedSuccessfully = true;
+            shaemeraldSuccessfully = true;
           }
         } catch (shareErr: any) {
           console.warn("Mobile Web Share cancelled or failed, falling back to download:", shareErr);
         }
       }
 
-      if (!sharedSuccessfully) {
+      if (!shaemeraldSuccessfully) {
         // Trigger automatic high-definition file download
         const link = document.createElement("a");
         link.href = videoUrl;
@@ -510,7 +510,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
       }
 
       setConjuringProgress(100);
-      setConjuringLabel(sharedSuccessfully ? "Shared successfully!" : "Downloaded!");
+      setConjuringLabel(shaemeraldSuccessfully ? "Shaemerald successfully!" : "Downloaded!");
       setTimeout(() => {
         setIsConjuring(false);
         setConjuringProgress(0);
@@ -570,11 +570,11 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onMouseEnter={handleMouseEnter}
-          className="relative w-[340px] h-[375px] md:w-[380px] md:h-[420px] rounded-2xl bg-[#090303] border-2 border-[#b91c1c] overflow-hidden transition-all duration-200 shadow-2xl shadow-red-950/40"
+          className="relative w-[340px] h-[375px] md:w-[380px] md:h-[420px] rounded-2xl bg-[#090303] border-2 border-[#b91c1c] overflow-hidden transition-all duration-200 shadow-2xl shadow-emerald-950/40"
           style={{
             transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
             transformStyle: "preserve-3d",
-            boxShadow: isHovered 
+            boxShadow: isHoveemerald 
               ? "0 25px 50px -12px rgba(185, 28, 28, 0.4), inset 0 0 40px rgba(185, 28, 28, 0.2)"
               : "0 15px 35px -12px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(220, 38, 38, 0.05)"
           }}
@@ -601,8 +601,8 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
 
       {/* Prophecy Omen Card Display */}
       {user && (
-        <div id="prophecy-omen" className="w-full max-w-sm mt-6 p-4 rounded-xl bg-black/60 border border-red-950/60 shadow-inner text-center animate-fade-in">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest bg-red-950/60 text-red-500 border border-red-900/40 mb-2.5">
+        <div id="prophecy-omen" className="w-full max-w-sm mt-6 p-4 rounded-xl bg-black/60 border border-emerald-950/60 shadow-inner text-center animate-fade-in">
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-widest bg-emerald-950/60 text-emerald-500 border border-emerald-900/40 mb-2.5">
             
             Your Spell
           </span>
@@ -616,7 +616,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
       <div id="sharing-panel" className="w-full max-w-sm mt-6 flex flex-col gap-3">
         {user ? (
           <>
-            <div className="text-center text-xs text-red-400 font-mono tracking-wider uppercase mb-1">
+            <div className="text-center text-xs text-emerald-400 font-mono tracking-wider uppercase mb-1">
               Share your Token
             </div>
             
@@ -639,7 +639,7 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
                 href="https://patreon.com/Wridrot?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-black text-xs font-mono tracking-wider border border-red-700/50 hover:border-red-500 hover:bg-red-950/20 text-red-400 transition-all"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-black text-xs font-mono tracking-wider border border-emerald-700/50 hover:border-emerald-500 hover:bg-emerald-950/20 text-emerald-400 transition-all"
               >
                 SIGN UP ON PATREON
               </a>
@@ -650,9 +650,9 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
               id="share-sms-btn"
               onClick={handleTextShare}
               disabled={isConjuring}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-red-950/80 to-red-900/80 hover:from-red-900 hover:to-red-800 text-xs font-mono tracking-widest text-[#fff] border border-red-700/60 hover:shadow-red-950/30 hover:shadow-xl transition-all cursor-pointer disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-emerald-950/80 to-emerald-900/80 hover:from-emerald-900 hover:to-emerald-800 text-xs font-mono tracking-widest text-[#fff] border border-emerald-700/60 hover:shadow-emerald-950/30 hover:shadow-xl transition-all cursor-pointer disabled:opacity-50"
             >
-              <Share2 className="w-4 h-4 text-red-400" />
+              <Share2 className="w-4 h-4 text-emerald-400" />
               COPY INVITE LINK
             </button>
             
@@ -668,13 +668,13 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
       {/* Spooky Conjuring Loading Modal */}
       {isConjuring && (
         <div id="conjuring-overlay" className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-fade-in p-4">
-          <div className="max-w-xs w-full p-6 rounded-2xl bg-[#0a0505] border border-red-900 text-center shadow-2xl">
+          <div className="max-w-xs w-full p-6 rounded-2xl bg-[#0a0505] border border-emerald-900 text-center shadow-2xl">
             <div className="relative w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <RefreshCw className="w-10 h-10 text-red-600 animate-spin" />
-              <div className="absolute inset-0 rounded-full border border-red-500/10 animate-ping" />
+              <RefreshCw className="w-10 h-10 text-emerald-600 animate-spin" />
+              <div className="absolute inset-0 rounded-full border border-emerald-500/10 animate-ping" />
             </div>
             
-            <h3 className="font-serif text-red-500 text-lg mb-2 tracking-wide font-bold">
+            <h3 className="font-serif text-emerald-500 text-lg mb-2 tracking-wide font-bold">
               GENERATING YOUR TOKEN
             </h3>
             
@@ -682,15 +682,15 @@ export default function ThreeDToken({ user, onShareRecorded }: ThreeDTokenProps)
               {conjuringLabel}
             </p>
 
-            {/* Glowing red gothic progress bar */}
-            <div className="w-full bg-red-950/50 rounded-full h-1.5 overflow-hidden border border-red-900/30">
+            {/* Glowing emerald gothic progress bar */}
+            <div className="w-full bg-emerald-950/50 rounded-full h-1.5 overflow-hidden border border-emerald-900/30">
               <div 
-                className="bg-red-600 h-full transition-all duration-300 shadow-[0_0_10px_#dc2626]" 
+                className="bg-emerald-600 h-full transition-all duration-300 shadow-[0_0_10px_#dc2626]" 
                 style={{ width: `${conjuringProgress}%` }}
               />
             </div>
             
-            <span className="text-[10px] text-red-900 font-mono tracking-widest block mt-2 text-right">
+            <span className="text-[10px] text-emerald-900 font-mono tracking-widest block mt-2 text-right">
               {conjuringProgress}%   DONE
             </span>
           </div>
