@@ -4,7 +4,7 @@ import { Sparkles, Skull, HelpCircle, Archive, BookOpen, Send, CheckCircle2, Sea
 import GothicForm from "./components/GothicForm";
 import SubmissionsSection from "./components/SubmissionsSection";
 import FlipbookMagazine from "./components/FlipbookMagazine";
-import background from "./components/images/c4.jpg";
+import background from "./components/images/c2.jpg";
 import cover from "./components/images/WridrotCover.png";
 import { WaitlistUser, ShareChannel } from "./types";
 
