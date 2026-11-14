@@ -366,11 +366,11 @@ export default function App() {
           </p>
 
           <p>
-            If you wish to get our inaugural issue, please click on the cover of the magazine to get emeraldurected to our shop. You can also checkout the minizine for this issue above.
+            If you wish to get our inaugural issue, please click on the cover of the magazine to download your pdf. You can also checkout the minizine for this issue above.
           </p>
 
           <p className="text-[11px] text-gray-400">
-            Do follow us on our socials - @wridrot.magazine
+           Support us on Patreon (search Wridrot). Follow us on our socials - @wridrot.magazine
           </p>
         </div>
 
@@ -410,11 +410,11 @@ export default function App() {
     />
 
     <p className="text-center mt-5 font-mono text-xs tracking-[0.2em] text-emerald-600 group-hover:text-emerald-300 transition-colors">
-      BUY THE INAUGURAL ISSUE 
+      GET YOUR COPY
     </p>
 
     <p className="text-center mt-2 font-serif text-xs text-gray-500">
-      Click on the cover to visit shop
+      Click on the cover to download pdf
     </p>
   </a>
 </div>
