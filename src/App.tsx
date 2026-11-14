@@ -398,7 +398,7 @@ export default function App() {
 {/* RIGHT: ZINE COVER - CLICKABLE PATREON LINK */}
 <div className="w-full flex justify-center items-center">
   <a
-    href="https://patreon.com/Wridrot?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+    href="https://drive.google.com/uc?export=download&id=1f6KlykXIpxd8M7ilft0i08dx721IJvWb"
     target="_blank"
     rel="noopener noreferrer"
     className="block group w-full max-w-sm text-center transition-transform duration-500 hover:scale-[1.03]"
